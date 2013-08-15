@@ -3,29 +3,20 @@ Shell scripts to invoke rackspace api using curl
 
 
 ## Usage
-First, authenticate
+First, authenticate and set environment variables for subsequent api calls
 ```
-./authenticate.sh <user> <apikey>
-```
-
-The response is a (big) JSON object containing all needed for the rest of api calls.
-
-particularilly : 
-  authtoken is at:
-  
-```
-{"access":{"token":{"id":"<here>"...
+source SetTokens.sh <user> <apikey>
 ```
 
-  publicUrl is at:
-  
+Then, to list load balancers
 ```
-"publicURL":"<here>"...
+./List.sh
 ```
 
-To list load balancers
+To set timeout:
+
 ```
-./list.sh <authtoken> <publicUrl>
+./SetTimeout.sh <loadbalancerid> <timeout>
 ```
 
  
