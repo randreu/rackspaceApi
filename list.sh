@@ -1,4 +1,3 @@
-curl -i \
--H "X-Auth-Token: $1" \
--H 'Accept: application/json' \
-"$2/loadbalancers"
+#!/bin/bash
+
+./_list.sh $TOKEN $URL  | grep -Po '(?<=name":")[^"]+","id":\d+' | sed 's/","id":/ : /g'
