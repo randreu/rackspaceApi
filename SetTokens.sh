@@ -7,3 +7,5 @@ export URL=$(cat token | grep -Po '(?<="publicURL":")[^"]+dfw.loadbalancers[^"]+
 echo "TOKEN set to $TOKEN"
 echo "URL set to $URL"
 
+rm token
+
